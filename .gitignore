@@ -45,3 +45,6 @@ Thumbs.db
 
 # Storybook
 storybook-static/
+projects/ui/documentation.json
+
+*storybook.log

@@ -3,6 +3,7 @@ const eslint = require('@eslint/js');
 const tseslint = require('typescript-eslint');
 const angular = require('angular-eslint');
 const eslintConfigPrettier = require('eslint-config-prettier');
+const storybook = require('eslint-plugin-storybook');
 
 module.exports = tseslint.config(
   {
@@ -57,4 +58,5 @@ module.exports = tseslint.config(
     files: ['**/*.ts'],
     extends: [eslintConfigPrettier],
   },
+  ...storybook.configs['flat/recommended'],
 );

@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "aa9317c7-13bc-4fe1-a84d-5d151b31a8f8"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -34,6 +35,26 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": ["projects/ui/**/*.ts", "projects/ui/**/*.html"]
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ui/.storybook",
+            "browserTarget": "ui:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "projects/ui"],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ui/.storybook",
+            "browserTarget": "ui:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "projects/ui"],
+            "outputDir": "storybook-static"
           }
         }
       }
